@@ -212,6 +212,8 @@ def main():
     global ltcLowPrice 
     global ltcHighPrice
  
+    cfg['client_id'] = client_id
+    cfg['client_secret'] = client_secret
     cmd_auth(cfg)
     while True:
       try:
