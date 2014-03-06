@@ -221,12 +221,12 @@ def main():
              sell = j['ticker']['sell']
              buy = j['ticker']['buy']
              if (float(buy) > ltcHighPrice):
-                 ltcHighPrice = float(buy)
+                 ltcHighPrice = float(buy) + 2
                  text = "xcoinAlert: ltc-USD sell %s, buy %s " % (sell, buy)
                  sms_send(text)
              elif (float(sell) < ltcLowPrice):
                  text = "xcoinAlert: ltc-USD sell %s, buy %s " % (sell, buy)
-                 ltcLowPrice = float(sell)
+                 ltcLowPrice = float(sell) - 2
                  sms_send(text)
 
         r = requests.get("https://btc-e.com/api/2/btc_usd/ticker", verify=False)
@@ -236,11 +236,11 @@ def main():
              buy = j['ticker']['buy']
              if (float(buy) > btcHighPrice):
                  text = "xcoinAlert: ltc-USD sell %s, buy %s " % (sell, buy)
-                 btcHighPrice = float(buy)
+                 btcHighPrice = float(buy) + 10
                  sms_send(text)
              elif (float(sell) < btcLowPrice):
                  text = "xcoinAlert: ltc-USD sell %s, buy %s " % (sell, buy)
-                 btcLowPrice = float(sell)
+                 btcLowPrice = float(sell) - 10
                  sms_send(text)
       except Exception, e:
         print str(e)
