@@ -11,6 +11,11 @@ support ltcoin btcoin price alert
 
 configure these values in xcoinalert.py before use:
 ```
+
+#send sms by
+useFection = True  #only for china mobile user
+useGoogle = True 
+
 #pyfection settings
 username =       
 password =       
@@ -25,9 +30,6 @@ btcHighPrice = 600
 ltcLowPrice = 12 
 ltcHighPrice = 20
                  
-#send sms by
-useGoogle = True 
-useFection = True
 
 #check delay time, default check every 10 minutes
 delaytime = 10 * 60
